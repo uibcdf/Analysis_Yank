@@ -35,10 +35,6 @@ def load_replica (traj_nc=None, nc_checkpoint_file=None, replica=0):
     	print('yo have to set a .nc file from yank')
     	return
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 790045fa1c9725ae51a4afa07d225846e22cbb51
     if not replica:
     	print ('replica no defined, loading replica 0')
     	return
@@ -61,13 +57,10 @@ def def_cluster (resid=0):
     selection=md.load (load, atom_indices=[index])
     distances = np.empty ((selection.n_frames, selection.n_frames))
         for i in range(selection.n_frames):
-<<<<<<< HEAD
             distances[i] = md.rmsd(selection,selection, i)
             print('Max pairwise rmsd: %f nm' % np.max(distances))
-=======
     distances[i] = md.rmsd(selection,selection, i)
     print('Max pairwise rmsd: %f nm' % np.max(distances))
->>>>>>> 790045fa1c9725ae51a4afa07d225846e22cbb51
     reduced_distances = squareform(distances, checks=False)
     linkage = scipy.cluster.hierarchy.linkage(reduced_distances, method='average')
     return
