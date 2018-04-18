@@ -29,7 +29,7 @@ def load_replica (traj_nc=None, nc_checkpoint_file=None, replica=0, start_frame=
     print (traj)
     print (topology)
     return
-    
+
     if not traj_nc:
     	print('you have to set a .nc file from yank')
     	return
