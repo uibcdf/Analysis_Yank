@@ -21,7 +21,7 @@ import os as os
 def version ():
     print("version: 0.0")
 
-def load_replica (traj_nc=None, nc_checkpoint_file=None, replica=0):
+def load_replica (traj_nc=None, nc_checkpoint_file=None, replica=0, start_frame=0, end_frame=-1, keep_solvent=None):
     print ('now loading ...')
     index=str(replica)
     traj= yk.extract_trajectory ('traj_nc',nc_checkpoint_file='nc_checkpoint_file', replica_index=replica, start_frame=0, end_frame=-1, keep_solvent=True)
