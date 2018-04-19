@@ -1,5 +1,6 @@
-#Importing libraries to use with Anlisys_Yank
+#Importing libraries to use with Analysis_Yank
 
+import yank as yank
 import yank.analyze as yk
 import matplotlib as mt
 from matplotlib import pyplot as plt
@@ -17,7 +18,7 @@ import seaborn as sb
 import numpy as np
 import os as os
 
-def version():
+def version ():
     print("version: 0.0")
 
 def load_replica (traj_nc=None, nc_checkpoint_file=None, replica=0):
@@ -30,13 +31,13 @@ def load_replica (traj_nc=None, nc_checkpoint_file=None, replica=0):
     print (topology)
     return
     
-    if not traj_nc:
-    	print('you have to set a .nc file from yank')
-    	return
+if not traj_nc:
+        print('you have to set a .nc file from yank')
+        return
 
-    if not replica:
-    	print ('replica no defined, loading replica 0')
-    	return
+if not replica:
+     print ('replica no defined, loading replica 0')
+     return
 
 def residues ():
     print ('List of residues in this experiment:',[residue for residue in traj.topology.residues])
