@@ -1,4 +1,5 @@
-#Importing libraries to use with Analysis_Yank
+# Libraries to import
+
 
 import yank as yank
 import yank.analyze as yk
@@ -11,15 +12,12 @@ from scipy.spatial.distance import squareform
 import numpy as np
 from numpy import dot, sqrt
 from numpy.linalg import eigvalsh
-import pandas as pnd
 import mdtraj as md
-import nglview as nv
-import seaborn as sb
-import numpy as np
-import os as os
 
 def version ():
 	print("version: 0.0")
+
+#Definition of clases in analyank module.
 
 def load_replica (traj_nc=None, nc_checkpoint_file=None, replica=0, start_frame=0, end_frame=-1, keep_solvent=None):
 	print ('now loading ...')
@@ -30,7 +28,26 @@ def load_replica (traj_nc=None, nc_checkpoint_file=None, replica=0, start_frame=
 	print (traj)
 	print (topology)
 	return
-	
+'''
+PARAMETERS:
+
+	traj_nc: 'str' 
+		complex or solvent .nc file to analize
+
+	nc_checkpoint_file: 'str' (optional)
+		Apropiate checkpoint .nc file for traj_nc
+
+	replica: 'int'
+		select a replica to extract and work with
+
+	start_frame and end_frame: 'int'
+		 define the lenght of trayectory, default: 0 and -1 for whole trajectory 
+
+	keep_solvent: bool 
+
+		Default: True
+'''
+
 if not traj_nc:
 		print('you have to set a .nc file from yank')
 		return
@@ -38,6 +55,8 @@ if not traj_nc:
 if not replica:
 	 print ('replica no defined, loading replica 0')
 	 return
+
+
 
 def residues ():
 	print ('List of residues in this experiment:',[residue for residue in traj.topology.residues])
